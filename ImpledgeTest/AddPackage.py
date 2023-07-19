@@ -18,6 +18,9 @@ driver.get("https://ecs-qa.kloudship.com")
 # Maximize window
 driver.maximize_window()
 
+# global wait
+driver.implicitly_wait(5)
+
 # Find the email input field and enter the email
 email_input = driver.find_element(By.ID, "mat-input-0")
 email_input.send_keys("kloudship.qa.automation@mailinator.com")
@@ -48,26 +51,22 @@ WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "mat-inpu
 
 Name = driver.find_element(By.XPATH, "//input[@formcontrolname='name']")
 Name.click()
-driver.implicitly_wait(5)
 Name.send_keys("Srishti Sharma")
 
 length = driver.find_element(By.XPATH, "//input[@formcontrolname='length']")
 length.click()
 # Clear the existing text from the input field
 length.clear()
-driver.implicitly_wait(5)
 length.send_keys("2")
 
 
 width = driver.find_element(By.XPATH, "//input[@formcontrolname='width']")
 width.click()
 width.clear()  # Clear the existing text from the input field
-driver.implicitly_wait(5)
 width.send_keys("4")
 
 height = driver.find_element(By.CSS_SELECTOR, "[formcontrolname='height']")
 height.clear()  # Clear the existing text from the input field
-driver.implicitly_wait(5)
 height.send_keys("9")
 
 # Save the package
