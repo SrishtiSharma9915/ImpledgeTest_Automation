@@ -19,6 +19,8 @@ driver.get("https://ecs-qa.kloudship.com")
 
 # Maximize window
 driver.maximize_window()
+driver.implicitly_wait(5)
+
 
 # Find the email input field and enter the email
 email_input = driver.find_element(By.ID, "mat-input-0")
@@ -38,7 +40,6 @@ WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//spa
 # Click on Packages
 package = driver.find_element(By.XPATH, "//span[normalize-space()='Packages']")
 package.click()
-driver.implicitly_wait(5)
 
 try:
     elem = driver.find_element(By.XPATH, "//div[@class='padding list-text']")
